@@ -4,7 +4,7 @@ shellcode:     file format elf64-x86-64
 
 
 Disassembly of section .text:  
-```assembly
+```
 0000000000401000 <_start>:  
   401000:	6a 3b                	push   $0x3b  
   401002:	58                   	pop    %rax  
