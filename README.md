@@ -41,3 +41,5 @@ Disassembly of section .text:
 "\x54\x5F\x52\x57\x54\x5E\x0F"
 "\x05\x6A\x3C\x58\x48\x31\xFF\x0F\x05"
 ```
+to compile : `gcc -z execstack exec.c`
+> -z execstack allowing to execute instructions stored in the stack
